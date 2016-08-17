@@ -2141,14 +2141,14 @@ angular.module('xeditable').factory('editableThemes', function() {
   var themes = {
     //default
     'default': {
-      formTpl:      '<form class="editable-wrap"></form>',
+      formTpl:      '<form class="editable-wrap" ng-submit="$event.stopPropagation();"></form>',
       noformTpl:    '<span class="editable-wrap"></span>',
       controlsTpl:  '<span class="editable-controls"></span>',
       inputTpl:     '',
       errorTpl:     '<div class="editable-error" ng-show="$error" ng-bind="$error"></div>',
       buttonsTpl:   '<span class="editable-buttons"></span>',
-      submitTpl:    '<button type="submit">save</button>',
-      cancelTpl:    '<button type="button" ng-click="$form.$cancel()">cancel</button>'
+      submitTpl:    '<button type="submit" ng-click="$event.stopPropagation();">save</button>',
+      cancelTpl:    '<button type="button" ng-click="$event.stopPropagation(); $form.$cancel();">cancel</button>'
     },
 
     //bs2

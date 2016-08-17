@@ -2141,7 +2141,7 @@ angular.module('xeditable').factory('editableThemes', function() {
   var themes = {
     //default
     'default': {
-      formTpl:      '<form class="editable-wrap" ng-submit="$event.stopPropagation();"></form>',
+      formTpl:      '<form class="editable-wrap" ng-click="$event.stopPropagation();"></form>',
       noformTpl:    '<span class="editable-wrap"></span>',
       controlsTpl:  '<span class="editable-controls"></span>',
       inputTpl:     '',
@@ -2153,14 +2153,14 @@ angular.module('xeditable').factory('editableThemes', function() {
 
     //bs2
     'bs2': {
-      formTpl:     '<form class="form-inline editable-wrap" role="form"></form>',
+      formTpl:     '<form class="form-inline editable-wrap" role="form" ng-click="$event.stopPropagation();"></form>',
       noformTpl:   '<span class="editable-wrap"></span>',
       controlsTpl: '<div class="editable-controls controls control-group" ng-class="{\'error\': $error}"></div>',
       inputTpl:    '',
       errorTpl:    '<div class="editable-error help-block" ng-show="$error" ng-bind="$error"></div>',
       buttonsTpl:  '<span class="editable-buttons"></span>',
-      submitTpl:   '<button type="submit" class="btn btn-primary"><span></span></button>',
-      cancelTpl:   '<button type="button" class="btn" ng-click="$form.$cancel()">'+
+      submitTpl:   '<button type="submit" class="btn btn-primary" ng-click="$event.stopPropagation();"><span></span></button>',
+      cancelTpl:   '<button type="button" class="btn" ng-click="$event.stopPropagation(); $form.$cancel();">'+
                       '<span></span>'+
                    '</button>'
 
@@ -2168,14 +2168,14 @@ angular.module('xeditable').factory('editableThemes', function() {
 
     //bs3
     'bs3': {
-      formTpl:     '<form class="form-inline editable-wrap" role="form"></form>',
+      formTpl:     '<form class="form-inline editable-wrap" role="form" ng-click="$event.stopPropagation();"></form>',
       noformTpl:   '<span class="editable-wrap"></span>',
       controlsTpl: '<div class="editable-controls form-group" ng-class="{\'has-error\': $error}"></div>',
       inputTpl:    '',
       errorTpl:    '<div class="editable-error help-block" ng-show="$error" ng-bind="$error"></div>',
       buttonsTpl:  '<span class="editable-buttons"></span>',
-      submitTpl:   '<button type="submit" class="btn btn-primary"><span></span></button>',
-      cancelTpl:   '<button type="button" class="btn btn-default" ng-click="$form.$cancel()">'+
+      submitTpl:   '<button type="submit" class="btn btn-primary" ng-click="$event.stopPropagation();"><span></span></button>',
+      cancelTpl:   '<button type="button" class="btn btn-default" ng-click="$event.stopPropagation(); $form.$cancel();">'+
                      '<span></span>'+
                    '</button>',
 

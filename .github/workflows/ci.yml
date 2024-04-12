@@ -14,7 +14,7 @@ env:
 
 jobs:
   ci:
-    runs-on: [ staging-iac ]
+    runs-on: [ ubuntu-latest ]
     steps:
       - name: checkout repository
         uses: actions/checkout@v4
